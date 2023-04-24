@@ -12,7 +12,7 @@ const CityButton = () => {
       <span className={`${styles.city__span} ${darkModeClass}`}>
         <LocationSvg />
       </span>
-      <span className={`${styles.city__text} ${darkModeClass}`}>Moscow</span>
+      <span className={`${styles.city__text} ${darkModeClass}`}>Краснодар</span>
     </button>
   )
 }

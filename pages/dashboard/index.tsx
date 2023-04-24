@@ -1,7 +1,9 @@
 import Header from '@/components/modules/Header/Header'
+import useRedirectByUserCheck from '@/hooks/useRedirectByUserCheck'
 import Head from 'next/head'
 
 function Dashboard() {
+  const { shouldLoadContent } = useRedirectByUserCheck()
   return (
     <>
       <Head>
@@ -10,7 +12,7 @@ function Dashboard() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" type="image/svg" sizes="32x32" href="/img/logo.svg" />
       </Head>
-      <Header />
+      {shouldLoadContent && <Header />}
     </>
   )
 }
