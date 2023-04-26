@@ -1,3 +1,4 @@
+import Footer from '@/components/modules/Footer/Footer'
 import Header from '@/components/modules/Header/Header'
 import useRedirectByUserCheck from '@/hooks/useRedirectByUserCheck'
 import Head from 'next/head'
@@ -13,6 +14,7 @@ function Dashboard() {
         <link rel="icon" type="image/svg" sizes="32x32" href="/img/logo.svg" />
       </Head>
       {shouldLoadContent && <Header />}
+      <Footer />
     </>
   )
 }
