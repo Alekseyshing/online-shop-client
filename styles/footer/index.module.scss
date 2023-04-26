@@ -107,6 +107,8 @@
 
         & li a {
           position: relative;
+          position: -moz-relative;
+          height: 50px;
 
           & span {
             display: block;
@@ -125,6 +127,9 @@
 
             &:nth-child(3) {
               position: absolute;
+              display: block;
+              height: 100%;
+              width: 100%;
               top: 25px;
               left: 0;
 
