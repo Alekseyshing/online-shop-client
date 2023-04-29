@@ -113,8 +113,7 @@ const CatalogFilters = ({
       }
     } catch (error) {
       const err = error as Error
-
-      if (err.message === 'URI malformed') {
+      if (err.message === 'Unterminated string in JSON at position 7') {
         toast.warning('Неправильный url для фильтров')
         return
       }

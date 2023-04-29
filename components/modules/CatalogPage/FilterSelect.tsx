@@ -3,27 +3,31 @@ import { useStore } from 'effector-react'
 import { useEffect, useState } from 'react'
 import Select from 'react-select'
 import { $mode } from '@/context/mode'
-import { $boilerParts } from '@/context/boilerParts'
-import { IOption, SelectOptionType } from '../../../types/common'
-import { createSelectOption } from '@/utils/common'
 import {
   controlStyles,
   menuStyles,
   selectStyles,
 } from '@/styles/catalog/select'
 import { optionStyles } from '@/styles/searchInput'
+import { IOption, SelectOptionType } from '@/types/common'
+import { createSelectOption } from '@/utils/common'
 import { categoriesOptions } from '@/utils/selectContents'
 import {
+  $boilerParts,
   setBoilerPartsByPopularity,
   setBoilerPartsCheapFirst,
   setBoilerPartsExpensiveFirst,
 } from '@/context/boilerParts'
 import { useRouter } from 'next/router'
 
-const FilterSelect = () => {
+const FilterSelect = ({
+  setSpinner,
+}: {
+  setSpinner: (arg0: boolean) => void
+}) => {
   const mode = useStore($mode)
-  const [categoryOption, setCategoryOption] = useState<SelectOptionType>(null)
   const boilerParts = useStore($boilerParts)
+  const [categoryOption, setCategoryOption] = useState<SelectOptionType>(null)
   const router = useRouter()
 
   useEffect(() => {
@@ -52,7 +56,7 @@ const FilterSelect = () => {
   const updateCategoryOption = (value: string) =>
     setCategoryOption({ value, label: value })
 
-  const updateRouteParam = (first: string) =>
+  const updateRoteParam = (first: string) =>
     router.push(
       {
         query: {
@@ -64,32 +68,33 @@ const FilterSelect = () => {
       { shallow: true }
     )
 
-  const handleSearchOptionChange = (selectedOption: SelectOptionType) => {
+  const handleSortOptionChange = (selectedOption: SelectOptionType) => {
+    setSpinner(true)
     setCategoryOption(selectedOption)
 
     switch ((selectedOption as IOption).value) {
       case 'Сначала дешевые':
         setBoilerPartsCheapFirst()
-        updateRouteParam('cheap')
+        updateRoteParam('cheap')
         break
       case 'Сначала дорогие':
         setBoilerPartsExpensiveFirst()
-        updateRouteParam('expensive')
+        updateRoteParam('expensive')
         break
       case 'По популярности':
         setBoilerPartsByPopularity()
-        updateRouteParam('popular')
-        break
-      default:
+        updateRoteParam('popular')
         break
     }
+
+    setTimeout(() => setSpinner(false), 1000)
   }
 
   return (
     <Select
       placeholder="Я ищу..."
       value={categoryOption || createSelectOption('Сначала дешевые')}
-      onChange={handleSearchOptionChange}
+      onChange={handleSortOptionChange}
       styles={{
         ...selectStyles,
         control: (defaultStyles) => ({
