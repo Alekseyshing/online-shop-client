@@ -19,6 +19,8 @@ export interface IAccordion {
   arrowOpenClass?: string
   isMobileForFilters?: boolean
   hideArrowClass?: string
+  boxShadowStyle?: string
+  callback?: (arg0: boolean) => void
 }
 
 export interface ILayoutProps {
