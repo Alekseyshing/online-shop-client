@@ -3,13 +3,13 @@ import { toast } from 'react-toastify'
 import { getBestsellersOrNewPartsFx } from '@/app/api/boilerParts'
 import BrandsSlider from '@/components/modules/DashboardPage/BrandsSlider'
 import { IBoilerParts } from '@/types/boilerparts'
-import styles from '@/styles/dashboard/index.module.scss'
 import { useStore } from 'effector-react'
 import { $mode } from '@/context/mode'
 import DashboardSlider from '@/components/modules/DashboardPage/DashboardSlider'
 import { $shoppingCart } from '@/context/shopping-cart'
 import { AnimatePresence, motion } from 'framer-motion'
 import CartAlert from '@/components/modules/DashboardPage/CartAlert'
+import styles from '@/styles/dashboard/index.module.scss'
 
 const DashboardPage = () => {
   const [newParts, setNewParts] = useState<IBoilerParts>({} as IBoilerParts)
