@@ -21,7 +21,7 @@ const OrderAccordion = ({
   const totalPrice = useStore($totalPrice)
   const darkModeClass = mode === 'dark' ? `${styles.dark_mode}` : ''
   const isMedia550 = useMediaQuery(550)
-  const [expanded, setExpanded] = useState(false)
+  const [expanded, setExpanded] = useState(true)
 
   const openAccordion = () => {
     setOrderIsReady(false)
