@@ -34,11 +34,14 @@ export const menuStyles = (
   theme: string
 ) => ({
   ...defaultStyles,
-  boxShadow: '0 4px 20px rgb(0 0 0 / 7%)',
+  boxShadow: 'none',
   borderRadius: '4px',
+  border: 'none',
+  borderTopRightRadius: 0,
+  borderTopLeftRadius: 0,
   height: 'auto',
   overflow: 'hidden',
-  backgroundColor: theme === 'dark' ? '#2d2d2d' : '#f2f2f2f2',
+  backgroundColor: theme === 'dark' ? '#2d2d2d' : '#ffffff',
   width: 'calc(100% + 40px)',
   minHeight: 30,
 })
@@ -95,11 +98,11 @@ export const optionStyles = (
     backgroundColor:
       theme === 'dark'
         ? state.isSelected
-          ? '#f2f2f2'
+          ? '#ffffff'
           : '#2d2d2d'
         : state.isSelected
           ? '#2d2d2d'
-          : '#f2f2f2',
+          : '#ffffff',
     color:
       theme === 'dark'
         ? state.isSelected
