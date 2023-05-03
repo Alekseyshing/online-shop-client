@@ -6,10 +6,10 @@ import { $mode } from '@/context/mode'
 import { IWrappedComponentProps } from '../../../types/common'
 import LogoutSvg from '@/components/elements/LogoutSvg/LogoutSvg'
 import { withClickOutside } from '../../../utils/withClickOutside'
-import styles from '@/styles/profileDropDown/index.module.scss'
 import { $user } from '@/context/user'
 import { logoutFx } from '@/app/api/auth'
 import { useRouter } from 'next/router'
+import styles from '@/styles/profileDropdown/index.module.scss'
 
 const ProfileDropDown = forwardRef<HTMLDivElement, IWrappedComponentProps>(
   ({ open, setOpen }, ref) => {
