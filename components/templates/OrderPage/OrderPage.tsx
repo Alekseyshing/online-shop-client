@@ -1,3 +1,5 @@
+/* eslint-disable indent */
+/* eslint-disable prettier/prettier */
 import { $mode } from '@/context/mode'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
@@ -44,8 +46,8 @@ const OrderPage = () => {
         url: '/payment',
         amount: totalPrice,
         description: `Заказ №1 ${userCity.city.length
-            ? `Город: ${userCity.city}, улица: ${userCity.street}`
-            : ''
+          ? `Город: ${userCity.city}, улица: ${userCity.street}`
+          : ''
           }`,
       })
 

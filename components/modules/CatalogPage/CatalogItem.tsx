@@ -1,3 +1,5 @@
+/* eslint-disable indent */
+/* eslint-disable prettier/prettier */
 /* eslint-disable @next/next/no-img-element */
 import { $mode } from '@/context/mode'
 import { IBoilerPart } from '@/types/boilerparts'

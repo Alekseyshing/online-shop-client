@@ -22,7 +22,10 @@ import { useRouter } from 'next/router'
 import { toast } from 'react-toastify'
 import { useDebounceCallback } from '@/hooks/useDebounceCallback'
 import { IBoilerPart } from '@/types/boilerparts'
-import { NoOptionsMessage, NoOptionsSpinner } from '../SelectOptionsMessage/SelectOptionsMessage'
+import {
+  NoOptionsMessage,
+  NoOptionsSpinner,
+} from '../SelectOptionsMessage/SelectOptionsMessage'
 
 const SearchInput = () => {
   const mode = useStore($mode)

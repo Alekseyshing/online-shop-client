@@ -1,3 +1,5 @@
+/* eslint-disable indent */
+/* eslint-disable prettier/prettier */
 import { useStore } from 'effector-react'
 import { $mode } from '@/context/mode'
 import { IFiltersPopupProps } from '@/types/catalog'

@@ -1,3 +1,5 @@
+/* eslint-disable indent */
+/* eslint-disable prettier/prettier */
 import Link from 'next/link'
 import { useStore } from 'effector-react'
 import CityButton from '@/components/elements/CityButton/CityButton'

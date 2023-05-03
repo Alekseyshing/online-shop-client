@@ -1,3 +1,5 @@
+/* eslint-disable indent */
+/* eslint-disable prettier/prettier */
 import { useStore } from 'effector-react'
 import { toast } from 'react-toastify'
 import { useEffect } from 'react'

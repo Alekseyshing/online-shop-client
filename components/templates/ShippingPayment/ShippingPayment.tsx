@@ -1,3 +1,5 @@
+/* eslint-disable indent */
+/* eslint-disable prettier/prettier */
 import { $mode } from '@/context/mode'
 import { useState } from 'react'
 import { useStore } from 'effector-react'

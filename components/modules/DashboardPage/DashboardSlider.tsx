@@ -1,3 +1,5 @@
+/* eslint-disable indent */
+/* eslint-disable prettier/prettier */
 /* eslint-disable @next/next/no-img-element */
 import Slider from 'react-slick'
 import { useStore } from 'effector-react'
