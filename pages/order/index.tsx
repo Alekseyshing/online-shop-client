@@ -1,10 +1,14 @@
 import Layout from '@/components/layout/Layout'
+import Breadcrumbs from '@/components/modules/Breadcrumbs/Breadcrumbs'
 import OrderPage from '@/components/templates/OrderPage/OrderPage'
 import useRedirectByUserCheck from '@/hooks/useRedirectByUserCheck'
 import Head from 'next/head'
 
 function Order() {
   const { shouldLoadContent } = useRedirectByUserCheck()
+  const getDefaultTextGenerator = () => ''
+  const getTextGenerator = () => ''
+
   return (
     <>
       <Head>
@@ -18,6 +22,10 @@ function Order() {
       {shouldLoadContent && (
         <Layout>
           <main>
+            <Breadcrumbs
+              getDefaultTextGenerator={getDefaultTextGenerator}
+              getTextGenerator={getTextGenerator}
+            />
             <OrderPage />
             <div className="overlay" />
           </main>
