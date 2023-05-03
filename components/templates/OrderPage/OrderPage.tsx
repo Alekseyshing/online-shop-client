@@ -44,8 +44,8 @@ const OrderPage = () => {
         url: '/payment',
         amount: totalPrice,
         description: `Заказ №1 ${userCity.city.length
-          ? `Город: ${userCity.city}, улица: ${userCity.street}`
-          : ''
+            ? `Город: ${userCity.city}, улица: ${userCity.street}`
+            : ''
           }`,
       })
 
@@ -84,7 +84,7 @@ const OrderPage = () => {
   return (
     <section className={styles.order}>
       <div className="container">
-        <h2 className={`${styles.order__title}${darkModeClass}`}>
+        <h2 className={`${styles.order__title} ${darkModeClass}`}>
           Оформление заказа
         </h2>
         <div className={styles.order__inner}>
@@ -95,11 +95,11 @@ const OrderPage = () => {
             />
           </div>
           <div className={styles.order__pay}>
-            <h3 className={`${styles.order__pay__title}${darkModeClass}`}>
+            <h3 className={`${styles.order__pay__title} ${darkModeClass}`}>
               Итого
             </h3>
           </div>
-          <div className={`${styles.order__pay__inner}${darkModeClass}`}>
+          <div className={`${styles.order__pay__inner} ${darkModeClass}`}>
             <div className={styles.order__pay__goods}>
               <span>
                 Товары (

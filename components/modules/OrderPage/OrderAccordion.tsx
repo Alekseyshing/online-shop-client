@@ -38,7 +38,7 @@ const OrderAccordion = ({
         initial={false}
         className={`${styles.order__cart__title}${darkModeClass}`}
       >
-        <h3 className={`${styles.order__cart__title__text}${darkModeClass}`}>
+        <h3 className={`${styles.order__cart__title__text} ${darkModeClass}`}>
           {showDoneIcon && (
             <span>
               <DoneSvg />
@@ -70,7 +70,7 @@ const OrderAccordion = ({
             style={{ overflow: 'hidden' }}
             transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
           >
-            <div className={`${styles.order__cart__content}${darkModeClass}`}>
+            <div className={`${styles.order__cart__content} ${darkModeClass}`}>
               <ul className={styles.order__cart__list}>
                 {shoppingCart.length ? (
                   shoppingCart.map((item) =>
@@ -83,7 +83,7 @@ const OrderAccordion = ({
                 ) : (
                   <li className={styles.order__cart__empty}>
                     <span
-                      className={`${styles.order__cart__empty__text}${darkModeClass}`}
+                      className={`${styles.order__cart__empty__text} ${darkModeClass}`}
                     >
                       Корзина пуста
                     </span>
